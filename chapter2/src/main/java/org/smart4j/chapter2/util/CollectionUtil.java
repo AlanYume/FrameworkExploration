@@ -8,19 +8,19 @@ import java.util.Map;
 
 public final class CollectionUtil {
 
-    public static boolean isEmpty(Collection<?> collection) {
+    public static boolean isEmpty(final Collection<?> collection) {
         return CollectionUtils.isEmpty(collection);
     }
 
-    public static boolean isNotEmpty(Collection<?> collection) {
+    public static boolean isNotEmpty(final Collection<?> collection) {
         return !isEmpty(collection);
     }
 
-    public static boolean isEmpty(Map<?, ?> map) {
+    public static boolean isEmpty(final Map<?, ?> map) {
         return MapUtils.isEmpty(map);
     }
 
-    public static boolean isNotEmpty(Map<?, ?> map) {
+    public static boolean isNotEmpty(final Map<?, ?> map) {
         return !isEmpty(map);
     }
 }

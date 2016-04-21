@@ -13,7 +13,7 @@ public class CustomerDeleteServlet extends HttpServlet {
      * deal with deleteCustomer requset
      */
     @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp)
+    protected void doDelete(final HttpServletRequest req, final HttpServletResponse resp)
             throws ServletException, IOException {
         // TODO
     }

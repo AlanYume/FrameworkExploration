@@ -15,7 +15,7 @@ public final class PropsUtil {
     /**
      * add property file
      */
-    public static Properties loadProps(String fileName) {
+    public static Properties loadProps(final String fileName) {
         Properties props = null;
         InputStream is = null;
         try {
@@ -25,13 +25,13 @@ public final class PropsUtil {
             }
             props = new Properties();
             props.load(is);
-        } catch (IOException e) {
+        } catch (final IOException e) {
             LOGGER.error("load properties file failure", e);
         } finally {
             if (is != null) {
                 try {
                     is.close();
-                } catch (IOException e) {
+                } catch (final IOException e) {
                     LOGGER.error("close input stream failure", e);
                 }
             }
@@ -42,14 +42,15 @@ public final class PropsUtil {
     /**
      * get string property (default is null)
      */
-    public static String getString(Properties props, String key) {
+    public static String getString(final Properties props, final String key) {
         return getString(props, key, "");
     }
 
     /**
      * get string property
      */
-    public static String getString(Properties props, String key, String defaultValue) {
+    public static String getString(final Properties props, final String key,
+            final String defaultValue) {
         String value = defaultValue;
         if (props.containsKey(key)) {
             value = props.getProperty(key);
@@ -60,14 +61,14 @@ public final class PropsUtil {
     /**
      * get int property (default is 0)
      */
-    public static int getInt(Properties props, String key) {
+    public static int getInt(final Properties props, final String key) {
         return getInt(props, key, 0);
     }
 
     /**
      * get int property
      */
-    public static int getInt(Properties props, String key, int defaultValue) {
+    public static int getInt(final Properties props, final String key, final int defaultValue) {
         int value = defaultValue;
         if (props.containsKey(key)) {
             value = CastUtil.castInt(props.getProperty(key));
@@ -78,14 +79,15 @@ public final class PropsUtil {
     /**
      * get boolean property (default is false)
      */
-    public static boolean getBoolean(Properties props, String key) {
+    public static boolean getBoolean(final Properties props, final String key) {
         return getBoolean(props, key, false);
     }
 
     /**
      * get boolean property
      */
-    public static boolean getBoolean(Properties props, String key, boolean defaultValue) {
+    public static boolean getBoolean(final Properties props, final String key,
+            final boolean defaultValue) {
         boolean value = defaultValue;
         if (props.containsKey(key)) {
             value = CastUtil.castBoolean(props.getProperty(key));

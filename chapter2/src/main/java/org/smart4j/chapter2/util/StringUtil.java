@@ -11,7 +11,7 @@ public final class StringUtil {
         return StringUtils.isEmpty(str);
     }
 
-    public static boolean isNotEmpty(String str) {
+    public static boolean isNotEmpty(final String str) {
         return !isEmpty(str);
     }
 }
