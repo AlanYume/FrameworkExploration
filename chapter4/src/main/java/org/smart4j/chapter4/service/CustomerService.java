@@ -2,6 +2,7 @@ package org.smart4j.chapter4.service;
 
 import org.smart4j.chapter4.model.Customer;
 import org.smart4j.framework.annotation.Service;
+import org.smart4j.framework.annotation.Transaction;
 import org.smart4j.framework.helper.DatabaseHelper;
 
 import java.util.List;
@@ -32,6 +33,7 @@ public class CustomerService {
     /**
      * 创建客户
      */
+    @Transaction
     public boolean createCustomer(final Map<String, Object> fieldMap) {
         return DatabaseHelper.insertEntity(Customer.class, fieldMap);
     }
@@ -39,6 +41,7 @@ public class CustomerService {
     /**
      * 更新客户
      */
+    @Transaction
     public boolean updateCustomer(final long id, final Map<String, Object> fieldMap) {
         return DatabaseHelper.updateEntity(Customer.class, id, fieldMap);
     }
@@ -46,6 +49,7 @@ public class CustomerService {
     /**
      * 删除客户
      */
+    @Transaction
     public boolean deleteCustomer(final long id) {
         return DatabaseHelper.deleteEntity(Customer.class, id);
     }
