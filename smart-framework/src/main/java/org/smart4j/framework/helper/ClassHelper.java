@@ -34,26 +34,14 @@ public final class ClassHelper {
      * 获取应用包名下所有 Service 类
      */
     public static Set<Class<?>> getServiceClassSet() {
-        final Set<Class<?>> classSet = new HashSet<Class<?>>();
-        for (final Class<?> cls : CLASS_SET) {
-            if (cls.isAnnotationPresent(Service.class)) {
-                classSet.add(cls);
-            }
-        }
-        return classSet;
+        return getClassSetByAnnotation(Service.class);
     }
 
     /**
      * 获取应用包名下所有 Controller 类
      */
     public static Set<Class<?>> getControllerClassSet() {
-        final Set<Class<?>> classSet = new HashSet<Class<?>>();
-        for (final Class<?> cls : CLASS_SET) {
-            if (cls.isAnnotationPresent(Controller.class)) {
-                classSet.add(cls);
-            }
-        }
-        return classSet;
+        return getClassSetByAnnotation(Controller.class);
     }
 
     /**
