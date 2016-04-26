@@ -7,17 +7,15 @@ import org.smart4j.plugin.soap.SoapHelper;
 
 /**
  * 客户 SOAP 服务单元测试
- *
- * @author huangyong
- * @since 1.0.0
  */
 public class CustomerSoapServiceTest {
 
     @Test
     public void getCustomerTest() {
-        String wsdl = "http://localhost:8080/soap/CustomerSoapService";
-        CustomerSoapService customerSoapService = SoapHelper.createClient(wsdl, CustomerSoapService.class);
-        Customer customer = customerSoapService.getCustomer(1);
+        final String wsdl = "http://localhost:8080/soap/CustomerSoapService";
+        final CustomerSoapService customerSoapService = SoapHelper.createClient(wsdl,
+                CustomerSoapService.class);
+        final Customer customer = customerSoapService.getCustomer(1);
         Assert.assertNotNull(customer);
     }
 }

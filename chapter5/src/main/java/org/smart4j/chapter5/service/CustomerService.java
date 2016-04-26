@@ -1,13 +1,14 @@
 package org.smart4j.chapter5.service;
 
-import java.util.List;
-import java.util.Map;
 import org.smart4j.chapter5.model.Customer;
 import org.smart4j.framework.annotation.Service;
 import org.smart4j.framework.annotation.Transaction;
 import org.smart4j.framework.bean.FileParam;
 import org.smart4j.framework.helper.DatabaseHelper;
 import org.smart4j.framework.helper.UploadHelper;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * 提供客户数据服务
@@ -19,15 +20,15 @@ public class CustomerService {
      * 获取客户列表
      */
     public List<Customer> getCustomerList() {
-        String sql = "SELECT * FROM customer";
+        final String sql = "SELECT * FROM customer";
         return DatabaseHelper.queryEntityList(Customer.class, sql);
     }
 
     /**
      * 获取客户
      */
-    public Customer getCustomer(long id) {
-        String sql = "SELECT * FROM customer WHERE id = ?";
+    public Customer getCustomer(final long id) {
+        final String sql = "SELECT * FROM customer WHERE id = ?";
         return DatabaseHelper.queryEntity(Customer.class, sql, id);
     }
 
@@ -35,8 +36,8 @@ public class CustomerService {
      * 创建客户
      */
     @Transaction
-    public boolean createCustomer(Map<String, Object> fieldMap, FileParam fileParam) {
-        boolean result = DatabaseHelper.insertEntity(Customer.class, fieldMap);
+    public boolean createCustomer(final Map<String, Object> fieldMap, final FileParam fileParam) {
+        final boolean result = DatabaseHelper.insertEntity(Customer.class, fieldMap);
         if (result) {
             UploadHelper.uploadFile("/tmp/upload/", fileParam);
         }

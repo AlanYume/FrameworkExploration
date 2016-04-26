@@ -25,7 +25,7 @@ public class CustomerController {
      * 进入 客户列表 界面
      */
     @Action("get:/customer")
-    public View index(final Param param) {
+    public View index() {
         final List<Customer> customerList = customerService.getCustomerList();
         return new View("customer.jsp").addModel("customerList", customerList);
     }
@@ -44,7 +44,7 @@ public class CustomerController {
      * 进入 创建客户 界面
      */
     @Action("get:/customer_create")
-    public View create(final Param param) {
+    public View create() {
         return new View("customer_create.jsp");
     }
 

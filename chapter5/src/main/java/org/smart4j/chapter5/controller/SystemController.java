@@ -37,12 +37,12 @@ public class SystemController {
      * 提交登录表单
      */
     @Action("post:/login")
-    public View loginSubmit(Param param) {
-        String username = param.getString("username");
-        String password = param.getString("password");
+    public View loginSubmit(final Param param) {
+        final String username = param.getString("username");
+        final String password = param.getString("password");
         try {
             SecurityHelper.login(username, password);
-        } catch (AuthcException e) {
+        } catch (final AuthcException e) {
             LOGGER.error("login failure", e);
             return new View("/login");
         }

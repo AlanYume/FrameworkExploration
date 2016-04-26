@@ -4,9 +4,6 @@ import org.smart4j.chapter5.model.Customer;
 
 /**
  * 客户 SOAP 服务接口
- *
- * @author huangyong
- * @since 1.0.0
  */
 public interface CustomerSoapService {
 

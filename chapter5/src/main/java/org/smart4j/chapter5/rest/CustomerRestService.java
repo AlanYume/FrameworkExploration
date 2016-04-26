@@ -1,22 +1,20 @@
 package org.smart4j.chapter5.rest;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 import org.smart4j.chapter5.model.Customer;
 import org.smart4j.chapter5.service.CustomerService;
 import org.smart4j.framework.annotation.Inject;
 import org.smart4j.framework.annotation.Service;
 import org.smart4j.plugin.rest.Rest;
 
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
 /**
  * 客户 REST 服务
- *
- * @author huangyong
- * @since 1.0.0
  */
 @Rest
 @Service
@@ -29,7 +27,7 @@ public class CustomerRestService {
 
     @GET
     @Path("/customer/{id}")
-    public Customer getCustomer(@PathParam("id") long customerId) {
+    public Customer getCustomer(@PathParam("id") final long customerId) {
         return customerService.getCustomer(customerId);
     }
 }

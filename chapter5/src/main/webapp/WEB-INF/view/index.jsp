@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="security" uri="/security" %>
 
-<c:set var="BASE" value="${pageContext.request.contextPath}"/>
+<c:set var="BASE" value="${pageContext.request.contextPath}" />
 
 <html>
 <head>
@@ -18,7 +18,7 @@
 </security:guest>
 
 <security:user>
-    <p>身份：<security:principal/></p>
+    <p>身份：<security:principal /></p>
     <ul>
         <li><a href="${BASE}/customer">客户管理</a></li>
     </ul>
